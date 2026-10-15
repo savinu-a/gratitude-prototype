@@ -420,7 +420,7 @@ def intify(o):
     if isinstance(o,list): return [intify(v) for v in o]
     return o
 data=intify(data)
-open("data.js","w").write("window.GRATITUDE_DATA = " + json.dumps(data, separators=(",",":"), ensure_ascii=False) + ";\n")
+open("lib/gratitude.json","w",encoding="utf-8").write(json.dumps(data, separators=(",",":"), ensure_ascii=False))
 print(meta)
 for d in DEPTS: print(d["code"], f'{d["target"]:,}', f'{d["raised"]/d["target"]:.0%}')
 print("statuses", {s: sum(1 for p in projects if p["status"]==s) for s in ("active","in_progress","completed")})

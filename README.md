@@ -16,23 +16,27 @@ A clickable prototype of **Gratitude**, a giving platform proposed as part of th
 
 ## Run locally
 
-It's a static site. Open `index.html` directly, or serve the folder:
+Built with Next.js (App Router) and TypeScript. Every page is statically generated.
 
 ```bash
-python -m http.server 8000
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
 ```
 
-## Files
+## Structure
 
-| File | Purpose |
+| Path | Purpose |
 |---|---|
-| `index.html` | Page shell and styles |
-| `app.js` | Routing, views and the pledge flow |
-| `data.js` | Generated demo data (departments, projects, BOQs, givers) |
-| `gen_data.py` | Regenerates `data.js`: `python gen_data.py` |
-| `img/` | Department photos |
-| `vercel.json` | Hosting settings for Vercel |
+| `app/` | Routes: `/`, `/departments/[id]`, `/projects/[id]`, `/legacy`, `/wall`, `/boq`, `/leadership`, `/governance`, `/pledge/[id]` |
+| `components/views/` | One component per page |
+| `components/ui.tsx` | Shared pieces: cards, ledger rows, plaque, board, tiers |
+| `components/store.tsx` | In-memory demo state: pledges made this visit, wall filters, pledge form |
+| `lib/data.ts` | Types, lookups and formatting helpers |
+| `lib/gratitude.json` | Generated demo data (departments, projects, BOQs, givers) |
+| `gen_data.py` | Regenerates the data: `npm run data` |
+| `public/img/` | Department photos |
 
 ## Deploy
 
-Import this repository into Vercel with the framework preset set to **Other** and no build command.
+Import this repository into Vercel. It is detected as a Next.js project, with no extra settings needed.
