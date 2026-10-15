@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: ReactNode }){
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300;400;500;600&family=Albert+Sans:wght@300;400;500;600;700;800&display=swap"/>
     </head>
     <body>
-      <div className="concept"><div className="in"><b>Concept</b><span>Prototype for the EXMO 2027 proposal, shown as an illustrative snapshot from December 2028. Not an official University of Moratuwa website. Projects, figures and names are hypothetical. Department photos: EXMO 2023.</span></div></div>
+      <div className="concept"><div className="in"><b>Concept</b><span>Concept prototype for the Transform the Campus pillar of the EXMO 2027 proposal. Not an official University of Moratuwa website. Figures and names are illustrative.</span></div></div>
       <div className="util"><div className="in"><Link href="/leadership">Leadership</Link><Link href="/governance">Governance &amp; audits</Link><Link href="/boq">BOQ index</Link><Link href="/governance#faq">FAQ</Link></div></div>
       <GivingProvider>
         <Header/>
